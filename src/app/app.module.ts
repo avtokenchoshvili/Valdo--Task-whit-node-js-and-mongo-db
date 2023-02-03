@@ -3,14 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './components/header/nav/nav.component';
+import { CursesComponent } from './components/header/nav/curses/curses.component';
+import { ResumeComponent } from './components/header/nav/resume/resume.component';
+import { QuizComponent } from './components/header/nav/quiz/quiz.component';
+import { BlogComponent } from './components/header/nav/blog/blog.component';
+import { SignInComponent } from './components/header/nav/sign-in/sign-in.component';
+import { SignUpComponent } from './components/header/nav/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    CursesComponent,
+    ResumeComponent,
+    QuizComponent,
+    BlogComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
