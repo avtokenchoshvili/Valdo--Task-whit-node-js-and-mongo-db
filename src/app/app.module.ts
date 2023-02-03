@@ -12,6 +12,9 @@ import { BlogComponent } from './components/header/nav/blog/blog.component';
 import { SignInComponent } from './components/header/nav/sign-in/sign-in.component';
 import { SignUpComponent } from './components/header/nav/sign-up/sign-up.component';
 
+import { FooterComponent } from './components/footer/footer.component';
+import {MainComponent} from "./components/main/main.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,9 @@ import { SignUpComponent } from './components/header/nav/sign-up/sign-up.compone
     QuizComponent,
     BlogComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    MainComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
