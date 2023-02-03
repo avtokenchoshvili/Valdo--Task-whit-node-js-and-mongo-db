@@ -1,0 +1,48 @@
+
+<section class="ftco-section">
+
+  <div class="container-fluid px-md-5">
+    <div class="row justify-content-between">
+      <div class="col-md-8 order-md-last">
+        <div class="row">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+
+  >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#ftco-nav"
+        aria-controls="ftco-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul  class="navbar-nav m-auto">
+          <li class="nav-item active"><a  href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+          <li class="nav-item"><a routerLink="/blog" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a routerLink="/Curses" class="nav-link">PORTFOLIO</a></li>
+          <a *ngIf="!(loginService.isLoggedIn$ | async)" routerLinkActive="active" routerLink="/signin">Login</a>
+          <!-- logout button -->
+          <button *ngIf="loginService.isLoggedIn$ | async" (click)="loginService.logout()">logout</button>
+          <li class="nav-item"><a routerLink="/sign-up" class="nav-link">Sign up</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+</section>
+
+

@@ -18,6 +18,7 @@ import { CardsComponent } from './components/main/cards/cards.component';
 import {HttpClientModule ,HTTP_INTERCEPTORS} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TokenInterceptor} from "./interceptor/token.interceptor";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {TokenInterceptor} from "./interceptor/token.interceptor";
     MainComponent,
     FooterComponent,
     CardsComponent,
+    ProfileComponent,
 
   ],
   imports: [
