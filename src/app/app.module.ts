@@ -14,6 +14,10 @@ import { SignUpComponent } from './components/header/nav/sign-up/sign-up.compone
 
 import { FooterComponent } from './components/footer/footer.component';
 import {MainComponent} from "./components/main/main.component";
+import { CardsComponent } from './components/main/cards/cards.component';
+import {HttpClientModule ,HTTP_INTERCEPTORS} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {TokenInterceptor} from "./interceptor/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -26,14 +30,26 @@ import {MainComponent} from "./components/main/main.component";
     SignInComponent,
     SignUpComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    CardsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
