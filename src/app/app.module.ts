@@ -21,6 +21,7 @@ import {TokenInterceptor} from "./interceptor/token.interceptor";
 import { ProfileComponent } from './profile/profile.component';
 import {MaterialModule} from "./modules/material/material.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { CategoriesDialogComponent } from './dialogs/categories-dialog/categories-dialog.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     FooterComponent,
     CardsComponent,
     ProfileComponent,
+    CategoriesDialogComponent,
 
 
   ],
