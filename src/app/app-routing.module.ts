@@ -6,14 +6,16 @@ import {SignInComponent} from "./components/header/nav/sign-in/sign-in.component
 import {SignUpComponent} from "./components/header/nav/sign-up/sign-up.component";
 import {BlogComponent} from "./components/header/nav/blog/blog.component";
 import {CursesComponent} from "./components/header/nav/curses/curses.component";
-import {QuizComponent} from "./components/header/nav/quiz/quiz.component";
+import {QuizComponent} from "./components/header/nav/Quizess/quiz.component";
 import { ProfileComponent } from './profile/profile.component';
+
 
 const routes: Routes = [
 
   {
     path: 'home',component: MainComponent,title: 'home'
   },
+  { path: 'admin', loadChildren: () => import('./admin/admin/admin.module').then(m=> m.AdminModule) },
 
   {
     path: 'profile' ,component: ProfileComponent
@@ -31,7 +33,7 @@ path: 'Quizzes',component: QuizComponent,title: 'Quizzes'
     path: 'sign-up',component: SignUpComponent,title:'sign-up'
   },
   {
-    path: 'signin',component: SignInComponent,title: 'sign-in'
+    path: 'sign-in',component: SignInComponent,title: 'sign-in'
   }
 
 ];
