@@ -6,7 +6,7 @@ import {SignInComponent} from "./components/header/nav/sign-in/sign-in.component
 import {SignUpComponent} from "./components/header/nav/sign-up/sign-up.component";
 import {BlogComponent} from "./components/header/nav/blog/blog.component";
 import {CursesComponent} from "./components/header/nav/curses/curses.component";
-import {QuizComponent} from "./components/header/nav/Quizess/quiz.component";
+import {QuizessComponent} from "./components/header/nav/Quizess/quizess.component";
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'profile' ,component: ProfileComponent
   },
   {
-path: 'Quizzes',component: QuizComponent,title: 'Quizzes'
+path: 'Quizzes',component: QuizessComponent,title: 'Quizzes'
   },
   {
     path: 'blog',component: BlogComponent,title:'blog'
