@@ -6,7 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import {CategoriesComponent} from "../categories/categories.component";
 import {TagsComponent} from "../tags/tags.component";
 import {QuizComponent} from "../quiz/quiz.component";
-
+import { MaterialModule} from "../../modules/material/material.module";
 
 
 @NgModule({
@@ -16,6 +16,7 @@ import {QuizComponent} from "../quiz/quiz.component";
   imports: [
     CommonModule,
     AdminRoutingModule,
+    MaterialModule
 
   ]
 })

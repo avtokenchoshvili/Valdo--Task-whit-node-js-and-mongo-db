@@ -19,7 +19,7 @@ export class LoginService {
   //login Check
   private _checkLogin(): void {
     localStorage.getItem('user') ? this.isLoggedIn$.next(true) : this.isLoggedIn$.next(false);
-    //is admin check
+    //is admin-module check
     if (localStorage.getItem('isAdmin')) {
       this.isAdmin$.next(JSON.parse(localStorage.getItem('isAdmin')!));
     }

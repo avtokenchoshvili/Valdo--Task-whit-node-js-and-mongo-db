@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'home',component: MainComponent,title: 'home'
   },
-  { path: 'admin', loadChildren: () => import('./admin/admin/admin.module').then(m=> m.AdminModule) },
+  { path: 'admin-module', loadChildren: () => import('./admin/admin-module/admin.module').then(m=> m.AdminModule) },
 
   {
     path: 'profile' ,component: ProfileComponent
