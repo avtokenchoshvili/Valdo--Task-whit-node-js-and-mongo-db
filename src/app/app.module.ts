@@ -19,6 +19,8 @@ import {HttpClientModule ,HTTP_INTERCEPTORS} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TokenInterceptor} from "./interceptor/token.interceptor";
 import { ProfileComponent } from './profile/profile.component';
+import {MaterialModule} from "./modules/material/material.module";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [
     {

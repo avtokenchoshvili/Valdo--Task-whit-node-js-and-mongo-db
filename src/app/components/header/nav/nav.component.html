@@ -33,11 +33,10 @@
           <li class="nav-item"><a routerLink="/blog" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
           <li class="nav-item"><a routerLink="/Curses" class="nav-link">PORTFOLIO</a></li>
-          <a *ngIf="!(loginService.isLoggedIn$ | async)" routerLinkActive="active" routerLink="/signin">Login</a>
-          <!-- logout button -->
-          <button *ngIf="loginService.isLoggedIn$ | async" (click)="loginService.logout()">logout</button>
-          <li class="nav-item"><a routerLink="/sign-up" class="nav-link">Sign up</a></li>
+          <li class="nav-item">   <a  class="nav-link" *ngIf="!(loginService.isLoggedIn$ | async)" routerLinkActive="active" routerLink="/signin">Login</a></li>
 
+      <a *ngIf="loginService.isLoggedIn$ | async" (click)="loginService.logout()" routerLink="/Curses" class="nav-link">logout</a>
+          <li class="nav-item"><a routerLink="/sign-up" class="nav-link">sing Up</a></li>
         </ul>
       </div>
     </div>

@@ -1,0 +1,54 @@
+.container {
+  margin: 80px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: gray;
+  border-radius: 20px;
+  text-align: center;
+
+  z-index: 10;
+
+  height: 700px;
+  width: 600px;
+  padding: 80px;
+}
+
+.mdc-button {
+
+
+  border-radius: 5px;
+}
+.mat-mdc-form-field{
+  margin: 20px auto;
+  padding:5px;
+}
+.form-container {
+  width: 30%;
+  height: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  opacity: 1;
+  animation: fadeIn 1s forwards;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+@media (max-width: 599px) {
+  .form-container {
+    width: 80%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

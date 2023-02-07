@@ -1,1 +1,37 @@
-<p>sign-up works!</p>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <form [formGroup]="registrationForm" class="form-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <mat-form-field appearance="outline" fxFlex>
+      <mat-label>Name</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input matInput type="text" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline" fxFlex>
+      <mat-label>Surname</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input matInput type="text" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline" fxFlex>
+      <mat-label>Email</mat-label>
+      <mat-icon matPrefix>email</mat-icon>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline" fxFlex>
+      <mat-label>Password</mat-label>
+      <mat-icon matPrefix>lock</mat-icon>
+      <input matInput type="password" formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline" fxFlex>
+      <mat-label>Phone Number</mat-label>
+      <mat-icon matPrefix>phone</mat-icon>
+      <input matInput type="text" formControlName="phone" placeholder="phone">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Register
+    </button>
+  </form>
+</div>

@@ -38,6 +38,6 @@ export class LoginService {
     localStorage.removeItem('isAdmin');
     this.isLoggedIn$.next(false);
     this.isAdmin$.next(false);
-    this._router.navigateByUrl('');
+    this._router.navigateByUrl('/home');
   }
 }

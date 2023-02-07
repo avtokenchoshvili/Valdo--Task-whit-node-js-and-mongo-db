@@ -1,0 +1,19 @@
+.form-container {
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+margin: 100px;
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    padding: 20px;
+  }
+}
+
+.btn.is-loading {
+  position: relative;
+  cursor: not-allowed;
+}
+
+
