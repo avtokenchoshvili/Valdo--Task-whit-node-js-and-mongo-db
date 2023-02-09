@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoriesService} from "../../services/categories.service";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Observable} from "rxjs";
 import {Categories} from "../../interfaces/categories";
 
@@ -16,6 +16,7 @@ export class CategoriesComponent  implements OnInit {
 
 
 constructor(	private _categoriesService: CategoriesService,
+
               private _matDialog: MatDialog) {
 }
   ngOnInit(): void {
@@ -31,7 +32,10 @@ private getCategoriesData(){
       width: '600px',
 
       data: cat
-    })
+    });
+    dialog.afterClosed().subscribe(() => {
+      this.getCategoriesData();
+    });
   }
 
   delete(categoryId: string) {

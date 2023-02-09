@@ -10,13 +10,13 @@
      <mat-form-field appearance="outline" fxFlex>
        <mat-label>Title</mat-label>
        <mat-icon matPrefix>title</mat-icon>
-       <input matInput type="text" formControlName="title">
+       <input matInput type="text" formControlName="title" required>
      </mat-form-field>
 
      <mat-form-field  appearance="outline" fxFlex>
        <mat-label>Descr</mat-label>
        <mat-icon matPrefix>Descr</mat-icon>
-       <input matInput type="text" formControlName="descr">
+       <input matInput type="text" formControlName="descr" required>
      </mat-form-field>
 
 
@@ -29,13 +29,13 @@
   <mat-form-field  appearance="outline" fxFlex>
     <mat-label>MetaKeyword</mat-label>
     <mat-icon matPrefix>metaKeyword</mat-icon>
-    <input matInput type="text" formControlName="metaKeyword">
+    <input matInput type="text" formControlName="metaKeyword" required>
   </mat-form-field>
 
   <mat-form-field  appearance="outline" fxFlex>
     <mat-label>MetaDescr</mat-label>
     <mat-icon matPrefix>meta</mat-icon>
-    <input matInput type="text" formControlName="metaDescr">
+    <input matInput type="text" formControlName="metaDescr" required>
   </mat-form-field>
 
 
@@ -48,7 +48,7 @@
       <mat-form-field  appearance="outline" fxFlex>
         <mat-label>MetaAuthor</mat-label>
         <mat-icon matPrefix>metaAuthor</mat-icon>
-        <input matInput type="text" formControlName="metaAuthor" placeholder="metaAuthor">
+        <input matInput type="text" formControlName="metaAuthor" placeholder="metaAuthor" required>
       </mat-form-field>
 
 
@@ -57,7 +57,7 @@
 
       <mat-label>Upload File</mat-label>
       <mat-icon matPrefix>attach_file</mat-icon>
-      <input (change)="selectImage($event)" type="file"  multiple   placeholder="img">
+      <input (change)="selectImage($event)" type="file"  multiple   placeholder="img" required>
 
     <div style="background-color: #ccc;" *ngIf="data">
       <img *ngIf="data.img" [src]="data.img" width="100px" height="60px" alt="category image">
@@ -68,8 +68,9 @@
 
 
 
-    <p><mat-checkbox formControlName="isFavorite">isFavorite</mat-checkbox></p>
-    <button mat-raised-button color="primary" (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
+    <p><mat-checkbox formControlName="isFavorite" required>isFavorite</mat-checkbox></p>
+    <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
 
   </form>
+
 </div>

@@ -10,7 +10,7 @@
   overflow: hidden;
   width: 100%;
   flex-wrap: wrap;
-justify-content: space-between;
+justify-content: center;
 }
 .example-card{
   margin: 20px;
