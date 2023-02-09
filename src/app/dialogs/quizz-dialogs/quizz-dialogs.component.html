@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{ data && data['edit'] ? 'edit' : 'add' }} answers</h1>
+<form [formGroup]="form">
+  <div>
+    <textarea
+      formControlName="question"
+      id=""
+      placeholder="answer"
+      name=""
+      cols="30"
+      rows="5"
+    ></textarea>
+  </div>
+  <div formArrayName="answers">
+    <div *ngFor="let answer of answers.controls; let i = index">
+      <div class="d-flex" [formGroupName]="i">
+        {{answers.controls[i].value['isCorrect']|json}}
+        <input type="radio" [checked]="answers.controls[i].value['isCorrect']" (change)="isCorrect(i)">
+        <input formControlName="answer" type="text">
+        <button (click)="delete(i)">delete</button>
+      </div>
+    </div>
+  </div>
+  <button (click)="addAnswer()">add answer</button>
+</form>
+<hr>
+<button (click)="add()">{{ data && data['edit'] ? 'edit' : 'add' }}</button>
+

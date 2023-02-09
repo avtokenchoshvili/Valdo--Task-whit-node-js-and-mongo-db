@@ -1,1 +1,37 @@
-<p>quiz works!</p>
+<div class="container">
+  <form [formGroup]="form" class="container">
+    <h1> {{ quizId ? 'edit' : 'add' }} quiz</h1>
+
+    <div>
+      <input formControlName="title" type="text" placeholder="title" />
+    </div>
+    <div>
+      <input formControlName="smallDescr" type="text" placeholder="small descr" />
+    </div>
+    <div>
+      <textarea formControlName="descr" type="text" placeholder="description"></textarea>
+    </div>
+
+    <button (click)="addAnswersDialog()">{{ quizId ? 'edit' : 'add' }} question</button>
+    <hr>
+
+    <div *ngFor="let question of questions; let i = index">
+      <h5>{{question.question}}</h5>
+
+      <div class="options" [class.correct]="answer.isCorrect" *ngFor="let answer of question.answers">
+        {{answer.answer}}
+      </div>
+
+      <!-- <ol>
+          <ng-container *ngFor="let answer of question.answers">
+            <li *ngIf="answer.answer">{{answer.answer}} x<li>
+          </ng-container>
+      </ol> -->
+      <button (click)="edit(question, i)">edit</button>
+    </div>
+    <!-- add quiz -->
+    <button (click)="addQuiz()">{{ quizId ? 'edit' : 'add' }}</button>
+  </form>
+</div>
+<hr>
+
