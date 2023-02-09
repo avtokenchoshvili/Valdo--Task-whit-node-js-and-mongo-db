@@ -1,37 +1,70 @@
-<div class="container">
-  <form [formGroup]="form" class="container">
-    <h1> {{ quizId ? 'edit' : 'add' }} quiz</h1>
+
+
+<div class="d-flex  justify-content-center align-items-center">
+
+  <form [formGroup]="form" class="form-container">
+
+    <h1>Add Quiz</h1>
+
+    <div class="">
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <mat-icon matPrefix>title</mat-icon>
+        <input matInput type="text" formControlName="title" required>
+      </mat-form-field>
+
+      <mat-form-field  appearance="outline">
+        <mat-label>smallDescr</mat-label>
+        <mat-icon matPrefix>smallDescr</mat-icon>
+        <input matInput type="text" formControlName="smallDescr" required>
+      </mat-form-field>
+
+
+    </div>
+
 
     <div>
-      <input formControlName="title" type="text" placeholder="title" />
+
+
+      <mat-form-field  appearance="outline">
+        <mat-label>description</mat-label>
+        <mat-icon matPrefix>description</mat-icon>
+        <input matInput type="text" formControlName="descr" required>
+      </mat-form-field>
+
+
+
+
     </div>
-    <div>
-      <input formControlName="smallDescr" type="text" placeholder="small descr" />
-    </div>
-    <div>
-      <textarea formControlName="descr" type="text" placeholder="description"></textarea>
+<div class="quiz-buttons">
+
+
+  <button mat-raised-button  (click)="addAnswersDialog()">{{ quizId ? 'edit' : 'add' }} question</button>
+
+
+
+
+
+  <div *ngFor="let question of questions; let i = index">
+    <h5>{{question.question}}</h5>
+
+    <div class="options" [class.correct]="answer.isCorrect" *ngFor="let answer of question.answers">
+      {{answer.answer}}
     </div>
 
-    <button (click)="addAnswersDialog()">{{ quizId ? 'edit' : 'add' }} question</button>
-    <hr>
 
-    <div *ngFor="let question of questions; let i = index">
-      <h5>{{question.question}}</h5>
+    <button mat-raised-button color="warn" (click)="edit(question, i)">edit</button>
+  </div>
 
-      <div class="options" [class.correct]="answer.isCorrect" *ngFor="let answer of question.answers">
-        {{answer.answer}}
-      </div>
 
-      <!-- <ol>
-          <ng-container *ngFor="let answer of question.answers">
-            <li *ngIf="answer.answer">{{answer.answer}} x<li>
-          </ng-container>
-      </ol> -->
-      <button (click)="edit(question, i)">edit</button>
-    </div>
-    <!-- add quiz -->
-    <button (click)="addQuiz()">{{ quizId ? 'edit' : 'add' }}</button>
-  </form>
+
+
 </div>
-<hr>
 
+    <button  [disabled]="form.invalid" mat-raised-button color="primary" (click)="addQuiz()">{{ quizId ? 'edit' : 'add' }}</button>
+
+  </form>
+
+</div>

@@ -1,0 +1,11 @@
+.d-flex{
+  text-align: center;
+  margin: 100px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.form-container{
+  margin: 50px;
+}
+.quiz-buttons button{
+  margin: 20px;
+}

@@ -1,27 +1,74 @@
-<h1 mat-dialog-title>{{ data && data['edit'] ? 'edit' : 'add' }} answers</h1>
-<form [formGroup]="form">
-  <div>
-    <textarea
-      formControlName="question"
-      id=""
-      placeholder="answer"
-      name=""
-      cols="30"
-      rows="5"
-    ></textarea>
-  </div>
-  <div formArrayName="answers">
-    <div *ngFor="let answer of answers.controls; let i = index">
-      <div class="d-flex" [formGroupName]="i">
-        {{answers.controls[i].value['isCorrect']|json}}
-        <input type="radio" [checked]="answers.controls[i].value['isCorrect']" (change)="isCorrect(i)">
-        <input formControlName="answer" type="text">
-        <button (click)="delete(i)">delete</button>
-      </div>
-    </div>
-  </div>
-  <button (click)="addAnswer()">add answer</button>
-</form>
-<hr>
-<button (click)="add()">{{ data && data['edit'] ? 'edit' : 'add' }}</button>
+<!--<h1 mat-dialog-title>{{ data && data['edit'] ? 'edit' : 'add' }} answers</h1>-->
+<!--<form [formGroup]="form">-->
+<!--  <div>-->
+<!--    <textarea-->
+<!--      formControlName="question"-->
+<!--      id=""-->
+<!--      placeholder="answer"-->
+<!--      name=""-->
+<!--      cols="30"-->
+<!--      rows="5"-->
+<!--    ></textarea>-->
+<!--  </div>-->
+<!--  <div formArrayName="answers">-->
+<!--    <div *ngFor="let answer of answers.controls; let i = index">-->
+<!--      <div class="d-flex" [formGroupName]="i">-->
+<!--        {{answers.controls[i].value['isCorrect']|json}}-->
+<!--        <input type="radio" [checked]="answers.controls[i].value['isCorrect']" (change)="isCorrect(i)">-->
+<!--        <input formControlName="answer" type="text">-->
+<!--        <button (click)="delete(i)">delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button (click)="addAnswer()">add answer</button>-->
+<!--</form>-->
+<!--<hr>-->
+<!--<button (click)="add()">{{ data && data['edit'] ? 'edit' : 'add' }}</button>-->
 
+
+
+
+<div class="d-flex  justify-content-center align-items-center">
+
+  <form [formGroup]="form" class="form-container" >
+    <h1 mat-dialog-title>{{ data && data['edit'] ? 'edit' : 'add' }} answers</h1>
+  <mat-form-field appearance="outline" >
+    <mat-label>Question</mat-label>
+    <mat-icon matPrefix>question</mat-icon>
+    <input matInput type="text" formControlName="question" required>
+  </mat-form-field>
+
+    <div class="answers" formArrayName="answers">
+
+      <div  *ngFor="let answer of answers.controls; let i = index">
+
+        <div class="d-flex " [formGroupName]="i">
+
+
+          <mat-form-field  appearance="outline" >
+            <mat-label>Answer</mat-label>
+
+            <mat-radio-button matPrefix class="example-radio-button" [checked]="answers.controls[i].value['isCorrect']" (change)="isCorrect(i)">
+            </mat-radio-button>
+            <input matInput formControlName="answer" type="text">
+          </mat-form-field>
+
+          <button mat-raised-button color="warn" (click)="delete(i)">delete</button>
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+    <button  mat-raised-button color="primary" (click)="addAnswer()">add answer</button>
+    <hr>
+    <hr>
+    <button [disabled]="form.invalid"  mat-raised-button [ngStyle]="{'color':'green'}" (click)="add()">{{ data && data['edit'] ? 'edit' : 'add' }}</button>
+  </form>
+
+
+</div>
