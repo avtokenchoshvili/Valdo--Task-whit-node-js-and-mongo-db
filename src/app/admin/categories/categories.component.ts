@@ -28,7 +28,8 @@ private getCategoriesData(){
 
   addCategory(cat?:Categories) {
     let dialog = this._matDialog.open(CategoriesDialogComponent, {
-      width: '440px',
+      width: '600px',
+
       data: cat
     })
   }

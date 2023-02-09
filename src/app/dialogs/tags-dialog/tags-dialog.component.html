@@ -1,0 +1,9 @@
+<h1> {{ !data ? 'Add' : 'Edit' }} Tag </h1>
+<mat-form-field appearance="outline">
+  <mat-label>Tag</mat-label>
+  <input matInput [formControl]="tagControl" type="text" placeholder="Tag">
+</mat-form-field>
+
+<hr>
+<button [disabled]="!tagControl.value"  mat-raised-button color="primary" (click)="submit()">{{ !data ? 'Add' : 'Edit' }}</button>
+<button mat-raised-button (click)="matDialogRef.close()">cancel</button>

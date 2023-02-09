@@ -16,8 +16,8 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>    <mat-icon  [color]=""  > edit </mat-icon>       </button>
-            <button mat-button>  <mat-icon  color="warn">   delete     </mat-icon>  </button>
+      <button mat-button  (click)="addCategory(cat)">    <mat-icon  [ngStyle]="{'color':'green  '}"  > edit </mat-icon>       </button>
+            <button mat-button (click)="delete(cat._id)">  <mat-icon  color="warn" >   delete     </mat-icon>  </button>
     </mat-card-actions>
   </mat-card>
 
@@ -36,4 +36,8 @@
 <!--    <button (click)="delete(cat._id)">delete</button>-->
 <!--  </div>-->
 <!--</div>-->
-<button (click)="addCategory()">add category</button>
+<button mat-raised-button color="primary"      (click)="addCategory()">add category</button>
+
+
+
+

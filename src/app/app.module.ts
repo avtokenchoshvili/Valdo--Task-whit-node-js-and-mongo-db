@@ -25,6 +25,8 @@ import { CategoriesDialogComponent } from './dialogs/categories-dialog/categorie
 import { AdminPgComponent } from './admin/admin-pg/admin-pg.component';
 import {AdminModule} from "./admin/admin-module/admin.module";
 import { AdminPgNavComponent } from './admin/admin-pg-nav/admin-pg-nav.component';
+import { TagsDialogComponent } from './dialogs/tags-dialog/tags-dialog.component';
+import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { AdminPgNavComponent } from './admin/admin-pg-nav/admin-pg-nav.component
     CategoriesDialogComponent,
     AdminPgComponent,
     AdminPgNavComponent,
+    TagsDialogComponent,
+    ConfirmationDialogComponent,
 
 
   ],
