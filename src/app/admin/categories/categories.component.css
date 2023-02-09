@@ -1,0 +1,14 @@
+.example-card {
+  max-width: 400px;
+}
+
+.cat-container{
+  display: flex;
+
+  text-align:center;
+  align-items: center;
+  overflow: hidden;
+}
+.example-card{
+  margin: 20px;
+}

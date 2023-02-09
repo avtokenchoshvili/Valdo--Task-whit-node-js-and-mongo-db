@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
 
-import {CategoriesComponent} from "../categories/categories.component";
-import {TagsComponent} from "../tags/tags.component";
-import {QuizComponent} from "../quiz/quiz.component";
+
+import { CategoriesComponent} from "src/app/admin/categories/categories.component";
+import {TagsComponent} from "src/app/admin/tags/tags.component";
+import {QuizComponent} from "src/app/admin/quiz/quiz.component";
 import { MaterialModule} from "../../modules/material/material.module";
+import {AdminRoutingModule} from "./admin-routing.module";
 
 
 @NgModule({
@@ -15,8 +16,8 @@ import { MaterialModule} from "../../modules/material/material.module";
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
-    MaterialModule
+    MaterialModule,
+    AdminRoutingModule
 
   ]
 })

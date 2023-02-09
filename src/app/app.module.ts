@@ -22,6 +22,9 @@ import { ProfileComponent } from './profile/profile.component';
 import {MaterialModule} from "./modules/material/material.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { CategoriesDialogComponent } from './dialogs/categories-dialog/categories-dialog.component';
+import { AdminPgComponent } from './admin/admin-pg/admin-pg.component';
+import {AdminModule} from "./admin/admin-module/admin.module";
+import { AdminPgNavComponent } from './admin/admin-pg-nav/admin-pg-nav.component';
 
 
 @NgModule({
@@ -39,6 +42,8 @@ import { CategoriesDialogComponent } from './dialogs/categories-dialog/categorie
     CardsComponent,
     ProfileComponent,
     CategoriesDialogComponent,
+    AdminPgComponent,
+    AdminPgNavComponent,
 
 
   ],
@@ -50,7 +55,8 @@ import { CategoriesDialogComponent } from './dialogs/categories-dialog/categorie
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AdminModule
   ],
   providers: [
     {

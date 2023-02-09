@@ -8,6 +8,8 @@ import {BlogComponent} from "./components/header/nav/blog/blog.component";
 import {CursesComponent} from "./components/header/nav/curses/curses.component";
 import {QuizessComponent} from "./components/header/nav/Quizess/quizess.component";
 import { ProfileComponent } from './profile/profile.component';
+import {AdminPgComponent} from "./admin/admin-pg/admin-pg.component";
+
 
 
 const routes: Routes = [
@@ -15,7 +17,8 @@ const routes: Routes = [
   {
     path: 'home',component: MainComponent,title: 'home'
   },
-  { path: 'admin-module', loadChildren: () => import('./admin/admin-module/admin.module').then(m=> m.AdminModule) },
+  // {path:'admin-pg' ,component:AdminPgComponent ,title:'admin-pg'},
+  { path: 'admin-pg', component:AdminPgComponent, loadChildren: () => import('./admin/admin-module/admin.module').then(m => m.AdminModule) },
 
   {
     path: 'profile' ,component: ProfileComponent

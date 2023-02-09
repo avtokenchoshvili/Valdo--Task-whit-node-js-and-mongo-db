@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Observable} from "rxjs";
 import {ProfileService} from "../services/profile.service";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,7 @@ import {ProfileService} from "../services/profile.service";
 export class ProfileComponent {
   data$!: Observable<any>;
   constructor(
+    public loginService: LoginService,
     private _profileService: ProfileService
   ) { }
 
