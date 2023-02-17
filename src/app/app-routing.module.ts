@@ -9,6 +9,8 @@ import {CursesComponent} from "./components/header/nav/curses/curses.component";
 import {QuizessComponent} from "./components/header/nav/Quizess/quizess.component";
 import { ProfileComponent } from './profile/profile.component';
 import {AdminPgComponent} from "./admin/admin-pg/admin-pg.component";
+import {QuizListComponent} from "./admin/quiz-list/quiz-list.component";
+import {QuizDetailComponent} from "./admin/quiz-detail/quiz-detail.component";
 
 
 
@@ -37,7 +39,9 @@ path: 'Quizzes',component: QuizessComponent,title: 'Quizzes'
   },
   {
     path: 'sign-in',component: SignInComponent,title: 'sign-in'
-  }
+  },
+  { path: 'quiz-list', component: QuizListComponent, title: 'Quiz list' },
+  { path: 'quiz-detail/:id', component: QuizDetailComponent, title: 'Quiz detail' },
 
 ];
 

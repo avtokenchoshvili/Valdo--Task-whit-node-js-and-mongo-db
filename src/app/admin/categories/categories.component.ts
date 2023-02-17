@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoriesService} from "../../services/categories.service";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {Observable} from "rxjs";
 import {Categories} from "../../interfaces/categories";
 
@@ -26,7 +26,10 @@ private getCategoriesData(){
     this.categoriesData$ = this._categoriesService.getAllCategory();
 }
 
-
+  identyfire(i:number ,item:Categories){
+console.log(i,item);
+return item._id
+  }
   addCategory(cat?:Categories) {
     let dialog = this._matDialog.open(CategoriesDialogComponent, {
       width: '600px',

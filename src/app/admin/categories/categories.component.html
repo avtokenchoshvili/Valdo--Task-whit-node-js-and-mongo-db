@@ -3,7 +3,7 @@
 <div class="cat-container" >
 
 
-  <mat-card class="example-card" *ngFor="let cat of categoriesData$ | async">
+  <mat-card class="example-card" *ngFor="let cat of categoriesData$ | async;trackBy:identyfire">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{cat.title}}</mat-card-title>
@@ -28,14 +28,7 @@
 
 
 
-<!--<div *ngFor="let cat of categoriesData$ | async">-->
-<!--  <div>-->
-<!--    {{cat.title}}-->
-<!--    {{cat._id}}-->
-<!--    <button (click)="addCategory(cat)">edit</button>-->
-<!--    <button (click)="delete(cat._id)">delete</button>-->
-<!--  </div>-->
-<!--</div>-->
+
 <button  mat-raised-button color="primary"      (click)="addCategory()">add category</button>
 
 

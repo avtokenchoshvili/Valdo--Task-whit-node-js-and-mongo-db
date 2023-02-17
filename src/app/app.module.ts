@@ -25,6 +25,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { AdminPgComponent } from './admin/admin-pg/admin-pg.component';
 import {AdminModule} from "./admin/admin-module/admin.module";
 import {AdminPgNavComponent} from "./admin/admin-pg-nav/admin-pg-nav.component";
+import { QuizListComponent } from './admin/quiz-list/quiz-list.component';
+import { QuizDetailComponent } from './admin/quiz-detail/quiz-detail.component';
 
 
 
@@ -49,6 +51,8 @@ import {AdminPgNavComponent} from "./admin/admin-pg-nav/admin-pg-nav.component";
     ProfileComponent,
     AdminPgNavComponent,
     AdminPgComponent,
+    QuizListComponent,
+    QuizDetailComponent,
 
 
 

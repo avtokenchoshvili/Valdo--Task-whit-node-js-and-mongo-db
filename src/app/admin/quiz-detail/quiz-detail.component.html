@@ -1,0 +1,22 @@
+<div class="container">
+  <ng-container *ngIf="quiz$ | async as quiz">
+    <h1>{{quiz.title}}</h1>
+    <p>{{quiz.descr}}</p>
+    <div>
+      <a routerLink="/admin/quiz" [queryParams]="{id: quiz._id}">edit</a>
+      <button>delete</button>
+    </div>
+    <div style="border: 2px solid red; margin-bottom: 10px;" *ngFor="let data of quiz.questions; let j = index">
+      <h2>index {{j}} - {{data.question}}</h2>
+      <div style="background: green;">
+        <div *ngFor="let el of data.answers; let i = index">
+          index - {{i}}
+          <input (change)="fillAnswers(j, i);" name="radio-{{j}}" id="radio-{{i}}-{{j}}" type="radio">
+          <label for="radio-{{i}}-{{j}}"> {{el.answer}}</label>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <hr>
+  <button (click)="submit()">finish quiz</button>
+</div>

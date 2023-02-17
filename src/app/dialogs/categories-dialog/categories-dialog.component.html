@@ -1,19 +1,19 @@
 
 <div class="d-flex  justify-content-center align-items-center">
-  <form [formGroup]="form" class="form-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <form [formGroup]="form" class="form-container" >
 
 
 
    <div class="">
 
 
-     <mat-form-field appearance="outline" fxFlex>
+     <mat-form-field appearance="outline" >
        <mat-label>Title</mat-label>
        <mat-icon matPrefix>title</mat-icon>
        <input matInput type="text" formControlName="title" required>
      </mat-form-field>
 
-     <mat-form-field  appearance="outline" fxFlex>
+     <mat-form-field  appearance="outline" >
        <mat-label>Descr</mat-label>
        <mat-icon matPrefix>Descr</mat-icon>
        <input matInput type="text" formControlName="descr" required>
@@ -26,13 +26,13 @@
 <div>
 
 
-  <mat-form-field  appearance="outline" fxFlex>
+  <mat-form-field  appearance="outline" >
     <mat-label>MetaKeyword</mat-label>
     <mat-icon matPrefix>metaKeyword</mat-icon>
     <input matInput type="text" formControlName="metaKeyword" required>
   </mat-form-field>
 
-  <mat-form-field  appearance="outline" fxFlex>
+  <mat-form-field  appearance="outline" >
     <mat-label>MetaDescr</mat-label>
     <mat-icon matPrefix>meta</mat-icon>
     <input matInput type="text" formControlName="metaDescr" required>
@@ -45,7 +45,7 @@
 
     <div>
 
-      <mat-form-field  appearance="outline" fxFlex>
+      <mat-form-field  appearance="outline" >
         <mat-label>MetaAuthor</mat-label>
         <mat-icon matPrefix>metaAuthor</mat-icon>
         <input matInput type="text" formControlName="metaAuthor" placeholder="metaAuthor" required>
@@ -69,7 +69,7 @@
 
 
     <p><mat-checkbox formControlName="isFavorite" required>isFavorite</mat-checkbox></p>
-    <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
+    <button type="button" [disabled]="form.invalid" mat-raised-button color="primary" (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
 
   </form>
 

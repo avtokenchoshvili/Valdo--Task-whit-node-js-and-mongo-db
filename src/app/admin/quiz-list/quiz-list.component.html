@@ -1,0 +1,7 @@
+<div class="container">
+  <div *ngFor="let quiz of quizes$ | async">
+    <a routerLink="/quiz-detail/{{quiz._id}}">{{quiz.title}}</a>
+    <hr>
+  </div>
+</div>
+
